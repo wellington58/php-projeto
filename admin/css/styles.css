@@ -53,9 +53,15 @@ footer .copy{
 /* Logo & Navigation */
 
 .header{
-	 color:#FFFFFF;
+	color:#FFFFFF;
    height:50px;
-   background-color: #000000;
+   background-color: #b43d2d;
+}
+
+.header .a{
+	color:#FFFFFF;
+   height:50px;
+   background-color: #b43d2d;
 }
 
 .header .logo h1{
