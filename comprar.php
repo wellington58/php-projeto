@@ -1,5 +1,5 @@
 <?php
-   include ('header.php');
+   include ('header2.php');
 ?>
  <hr>
  <?php
@@ -33,27 +33,21 @@
 					</div>
            <hr>
         </div><br><br>
-    <div class="row">
+      <div class="row">
         <?php while ( $dados = mysqli_fetch_assoc($resultados) ) { ?>
-        <div class="col-sm-3">
-        <div class="thumbnail" class="caption text-center">
-          <div class="caption text-center">
-			<img src="fotosprodutos/<?= $dados['imagem']; ?> "style="height:120px;width:50%;"> 
-     <h4><strong><?php echo $dados['descricao'] ?></strong></h4><br><br>
-     
-        <strong><?php echo $dados['categoria'] ?></strong><br><br>
-                <strong>R$<?php echo $dados['preco'] ?></strong><br><br>
-
-
-			<input type="hidden" id="postId" name="postId" value="<?= $dados['codproduto']; ?>">
-			<p><a href="produtop.php?codproduto=<?= $dados['codproduto']; ?>" class="btn btn-primary" role="button">
-             Comprar</a> </p>
-
-                    </div>
-              </div>
+        <div class="col-sm-4">
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="fotosprodutos/<?= $dados['imagem']; ?> "style="height:120px;width:50%;" alt="Card image cap"> 
+                <div class="card-body">
+                  <p><h5 class="card-title"><strong><?php echo $dados['descricao'] ?></strong></h5></p>
+                  <p class="card-text"><strong><?php echo $dados['categoria'] ?></strong></p>
+                  <a href="produtop.php?codproduto=<?= $dados['codproduto']; ?>" class="btn btn-primary" role="button" value="<?= $dados['codproduto']; ?>">Comprar</a>
+                </div>
+            </div>
         </div>
-        
-    <?php } ?>
+        <?php } ?>
+      </div>
+   </div>
         
 </div>
         <?php
@@ -99,5 +93,5 @@ if($pagina_posterior <= $num_pagina){ ?>
         
     </div>
 
-    <hr>
+    
       <?php include "footer.php";?>
