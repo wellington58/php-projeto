@@ -13,7 +13,7 @@
     $result_sql = "SELECT * FROM produto WHERE categoria LIKE '%$valor_pesquisar%'";
     $resultado = mysqli_query($conexao, $result_sql);
     $total_produto = mysqli_num_rows($resultado);
-    $quantidade_pg = 9;
+    $quantidade_pg = 12;
     $num_pagina = ceil($total_produto/$quantidade_pg);
     $inicio = ($quantidade_pg*$pagina)-$quantidade_pg;
     $result_sqls = "SELECT * FROM produto WHERE categoria LIKE '%$valor_pesquisar%' limit $inicio, $quantidade_pg";

@@ -8,7 +8,7 @@
     $sql = "SELECT * from produto";
     $resultado = mysqli_query($conexao, $sql);
     $total_produto = mysqli_num_rows($resultado);
-    $quantidade_pg = 8;
+    $quantidade_pg = 12;
     $num_pagina = ceil($total_produto/$quantidade_pg);
     $inicio = ($quantidade_pg*$pagina)-$quantidade_pg;
     $sqls = "SELECT * FROM produto limit $inicio, $quantidade_pg";   
@@ -26,7 +26,7 @@
 		<form class="form-inline" method="GET" action="pesquisar.php">
 		<div class="form-group">
 		<label for="exampleInputName2"></label>
-		<input type="text" name="pesquisar" class="form-control" id="exampleInputName2" placeholder="Digitar...">
+		<input type="text" name="pesquisar" class="form-control" id="exampleInputName2" placeholder="Digite sua pesquisa...">
 				</div>
 		<button type="submit" class="btn btn-primary">Pesquisar</button>
 						</form>
