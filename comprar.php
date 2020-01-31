@@ -35,15 +35,19 @@
         </div><br><br>
       <div class="row">
         <?php while ( $dados = mysqli_fetch_assoc($resultados) ) { ?>
-        <div class="col-sm-4">
-            <div class="card" style="width: 20rem; ">
+        <div class="col-sm-3">
+        <a href="produtop.php?codproduto=<?= $dados['codproduto']; ?>" id="cor">
+            <div class="card"   >
               <div class="card-body">
-                <img class="card-img-top" src="fotosprodutos/<?= $dados['imagem']; ?> "style="height:120px;width:50%;" alt="Card image cap"> 
-                  <p id='cartao'><b><?php echo $dados['descricao'] ?></b></p>
+                <img class="card-img-top" src="fotosprodutos/<?= $dados['imagem']; ?> "style="width:80%;" alt="Card image cap"> 
+               
+                <p id='cartoes' class="card-title"><b><?php echo $dados['descricao'] ?></b></p>
                   <p class="card-text"><strong><?php echo $dados['categoria'] ?></strong></p>
-                  <a href="produtop.php?codproduto=<?= $dados['codproduto']; ?>" class="btn btn-primary" role="button" value="<?= $dados['codproduto']; ?>">Comprar</a>
+                  <h5><p class="cart-text">R$ <?php echo $dados['preco'] ?></p></h5>
+                  <a href="carrinho.php?acao=add&codproduto=<?= $dados['codproduto']; ?>" id="botao" class="btn btn-primary" role="button" value="<?= $dados['codproduto']; ?>">Comprar</a>
+
                 </div>
-            </div>
+           </div></a>
         </div>
         <?php } ?>
       </div>

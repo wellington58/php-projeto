@@ -31,8 +31,8 @@
 		<br><br>
 <form class="form-inline" method="GET" action="pesquisar.php">
 				<div class="form-group">
-<label for="exampleInputName2">Pesquisar</label>
-<input type="text" name="pesquisar" class="form-control" id="exampleInputName2" placeholder="Digitar...">
+                    <label for="exampleInputName2">Pesquisar</label>
+                    <input type="text" name="pesquisar" class="form-control" id="exampleInputName2" placeholder="Digite sua pesquisa...">
 				</div>
     <button type="submit" class="btn btn-primary">Pesquisar</button>
 						</form>
