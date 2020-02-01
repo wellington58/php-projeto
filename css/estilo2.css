@@ -1,11 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 
-    /*retirando cor do hiperlink comprar*/
-    A:link {text-decoration:none;color:black }
-    A:visited {text-decoration:none;}
-    A:active {text-decoration:none;}
-    A:hover {text-decoration:none;}
+    /*retirando cor do hiperlink, inicio da alteração da pagina comprar*/
+    A:link {text-decoration:none;color:black}
+    A:visited {text-decoration:none;color:black}
+    A:active {text-decoration:none;color:black}
+    A:hover {text-decoration:none;color:black}
+    
     
 #botao {
     color: white;
@@ -30,8 +31,18 @@
 
 .card {
     margin-bottom: 20px;
-
 }
+
+#alignleft{
+  float: left;
+  margin: 1px 4px 0 0;
+  padding: 3px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  }
+
+/*fim da pagina de alteração*/
+
 .footer{
 	background-color:#000000;
 	color:#FFFFFF;

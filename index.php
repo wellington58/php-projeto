@@ -19,6 +19,8 @@ include 'header.php';
       <li data-target="#myCarousel" data-slide-to="2"></li>
 	  <li data-target="#myCarousel" data-slide-to="3"></li>
 	  <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    
 	</ol>
       <div class="carousel-inner">
          <div class="item active">
@@ -34,6 +36,9 @@ include 'header.php';
             <img class="img-responsive" src="img/j4.jpg"style="width:100%;height:20em;">
           </div>
 		   <div class="item">
+            <img class="img-responsive" src="img/j3.jpg"style="width:100%;height:20em;">
+          </div>
+          <div class="item">
             <img class="img-responsive" src="img/j2.jpg"style="width:100%;height:20em;">
           </div>
        </div>

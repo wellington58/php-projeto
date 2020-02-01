@@ -1,10 +1,21 @@
 ﻿<?php
-include "header.php";
+include "header2.php";
 include "conexao.php";
 ?>
-<div class="container">
-   <h1> Produtos</h1>
-	<div class="row">
+<div class="container" style="width:100%;">
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <h1>Produto</h1>
+            </div>
+      <div class="col-sm-6 col-md-6">
+        <form class="form-inline" method="GET" action="pesquisar.php">
+          <div class="form-group">
+            <label for="exampleInputName2"></label>
+            <input type="text" name="pesquisar" class="form-control" id="exampleInputName2" placeholder="Digite sua pesquisa...">
+          </div>
+		      <button type="submit" class="btn btn-primary">Pesquisar</button>
+			  </form>
+			</div>
 		<!--Imagens diretas do banco-->       
 <?php
 		// select * from nometabela retorna todos os produtos//
@@ -16,13 +27,15 @@ include "conexao.php";
 	   {  
  ?>
 	<div class="col-sm-3">
-	<div class="thumbnail">
- <img  style="width:50%;height:200px" src="fotosprodutos/<?php echo $dados['imagem'] ?>" <?php echo $dados['imagem'] ?>;>
-      <div class="caption text-center">
-         <strong>Descrição:<?php echo $dados['descricao'] ?></strong>
-                <p><br/><strong>Categoria:</strong>: <?php echo $dados['categoria'] ?><br><br>
-				<strong>Preço:</strong>:<?php echo "R$ ";
-				echo $dados['preco']?>
+    <a href="produtop.php?codproduto=<?= $dados['codproduto']; ?>">
+            <div class="card"   >
+              <div class="card-body">
+                <img class="card-img-top" src="fotosprodutos/<?= $dados['imagem']; ?> "style="width:80%;" alt="Card image cap"> 
+               
+                <p id='cartoes' class="card-title"><b><?php echo $dados['descricao'] ?></b></p>
+                  <p class="card-text"><strong><?php echo $dados['categoria'] ?></strong></p>
+                  <h5><p class="cart-text">POR: R$ <?php echo $dados['preco'] ?></p></h5>
+                  <a href="carrinho.php?acao=add&codproduto=<?= $dados['codproduto']; ?>" id="botao" class="btn btn-primary" role="button" value="<?= $dados['codproduto']; ?>">Comprar</a>
                </p>
               </div>
           </div>

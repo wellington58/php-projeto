@@ -1,5 +1,5 @@
 ﻿<?php
-include "header.php";
+include "header2.php";
 include "conexao.php";
 ?>
 <div class="container">
@@ -13,13 +13,15 @@ include "conexao.php";
 	   {  
  ?>
 	<div class="col-sm-3">
-	<div class="thumbnail">
- <img  style="width:50%;height:200px" src="fotosprodutos/<?php echo $dados['imagem'] ?>" <?php echo $dados['imagem'] ?>;>
-      <div class="caption text-center">
-         <strong>Descrição:<?php echo $dados['descricao'] ?></strong>
-                <p><br/><strong>Categoria:</strong>: <?php echo $dados['categoria'] ?><br><br>
-				<strong>Preço:</strong>:<?php echo "R$ ";
-				echo $dados['preco']?>
+        <a href="produtop.php?codproduto=<?= $dados['codproduto']; ?>">
+
+            <div class="card"   >
+              <div class="card-body">
+                <img class="card-img-top" src="fotosprodutos/<?= $dados['imagem']; ?> "style="width:80%;" alt="Card image cap"> 
+               
+                <p id='cartoes' class="card-title"><b><?php echo $dados['descricao'] ?></b></p>
+                  <p class="card-text"><strong><?php echo $dados['categoria'] ?></strong></p>
+                  <h5><p class="cart-text">POR: R$ <?php echo $dados['preco'] ?></p></h5>
                </p>
               </div>
           </div>

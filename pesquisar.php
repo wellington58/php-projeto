@@ -1,5 +1,5 @@
 <?php
-        include ('header.php');
+        include ('header2.php');
 ?>
   
 <?php
@@ -39,62 +39,75 @@
 					</div>
         </div>
     <br><br>
-    <div class="row"> 
+    <div class="row">
         <?php while ( $dados = mysqli_fetch_assoc($resultados) ) { ?>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="fotosprodutos/<?= $dados['imagem']; ?> "style="height:120px;width:50%;">
-                <div class="caption text-center">
-                    <h3><?php echo $dados['descricao']; ?> </h3>
+        <div class="col-sm-3">
+        <a href="produtop.php?codproduto=<?= $dados['codproduto']; ?>" id="cor">
+            <div class="card"   >
+              <div class="card-body">
+                <img class="card-img-top" src="fotosprodutos/<?= $dados['imagem']; ?> "style="width:80%;" alt="Card image cap"> 
+               
+                <p id='cartoes' class="card-title"><b><?php echo $dados['descricao'] ?></b></p>
+                  <p class="card-text"><strong><?php echo $dados['categoria'] ?></strong></p>
+                  <h5><p class="cart-text">R$ <?php echo $dados['preco'] ?></p></h5>
+                  <a href="carrinho.php?acao=add&codproduto=<?= $dados['codproduto']; ?>" id="botao" class="btn btn-primary" role="button" value="<?= $dados['codproduto']; ?>">Comprar</a>
 
-                    <p> <?php echo $dados['categoria']; ?></p>
-		<input type="hidden" id="postId" name="postId" value="<?= $dados['codproduto']; ?>">
- <p> <a href="produtop.php?codproduto=<?= $dados['codproduto']; ?>" class="btn btn-primary" role="button">
- Compra</a></p>
-		</div>
-            </div>
+                </div>
+           </div></a>
         </div>
-    <?php } ?>  
-	</div>
-    <?php
-       $pagina_anterior = $pagina - 1;
-	   $pagina_posterior = $pagina + 1;
-    ?>   
-    <nav>
-     <ul class="pagination">
-      <li class="page-item">
-     <?php
-		if($pagina_anterior != 0){ ?>     
-      <a class="page-link" href="pesquisar.php?pagina=<?php echo $pagina_anterior; ?>&pesquisar=<?php echo $valor_pesquisar; ?>" aria-label="Previous">
-     <span aria-hidden="true">&laquo;</span>
-     </a>
-      <?php }else{ ?>
-        <span class="sr-only">Previous</span>
-      <?php }  ?>
-     </li>
-	<?php 
-	//Apresentar a paginacao
-	for($i = 1; $i < $num_pagina + 1; $i++){ ?>
-	<li><a href="pesquisar.php?pagina=<?php echo $i; ?>&pesquisar=<?php echo $valor_pesquisar; ?>"><?php echo $i; ?></a></li>
-	<?php } ?>
-	<?php
-if($pagina_posterior <= $num_pagina){ ?>
-     <li class="page-item">  
- <a href="pesquisar.php?pagina=<?php echo $pagina_posterior; ?>&pesquisar=<?php echo $valor_pesquisar; ?>" aria-label="Next">
- <span aria-hidden="true">&raquo;</span>
- </a>
- <?php }else{ ?>
-  <span class="sr-only">Next</span>
- <?php }  ?>
- </li>
- </ul>
-</nav>
-</div>
-  
-</div>
- </section>
-    <hr>
-<?php include "footer.php";?>
+        <?php } ?>
+      </div>
+    
+    
+ 
+        <?php
+		$pagina_anterior = $pagina - 1;
+		$pagina_posterior = $pagina + 1;
+        ?>
+        
+        <nav class="nav">
+        <div class="container">
+         <div class="row-fluid">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+            
+                <?php
+				if($pagina_anterior != 0){ ?>
+                
+              <a class="page-link" href="comprar.php?pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous">
+                <span aria-hidden="true"><i class="fa fa-backward"></i></span>
+                  </a>
+                <?php }else{ ?>
+                <span class="sr-only">Previous</span>
+              <?php }  ?>
+            </li>
+             
+              	<?php 
+					//Apresentar a paginacao
+					for($i = 1; $i < $num_pagina + 1; $i++){ ?>
+						<li class="page-item">
+            <a class="page-link" href="comprar.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+				<?php } ?>
+              
+              <?php
+                if($pagina_posterior <= $num_pagina){ ?>
+                <li class="page-item">  
+               <a class="page-link" href="comprar.php?pagina=<?php echo $pagina_posterior; ?>" aria-label="Next">
+                <span aria-hidden="true"><i class="fa fa-forward"></i></span>
+                    </a>
+                  <?php }else{ ?>
+                <span class="sr-only">Next</span>
+              <?php }  ?>
+            </li>
+          </ul>
+          </div>
+          </div>
+        </nav>
+        
+    </div>
+
+    
+      <?php include "footer.php";?>
 <?php
  $sqls = "SELECT * FROM produto WHERE categoria LIKE '%$valor_pesquisar%' limit $inicio, $quantidade_pg";
 $resultados = mysqli_query($conexao, $sqls);
