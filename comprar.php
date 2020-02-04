@@ -27,7 +27,7 @@
             <label for="exampleInputName2"></label>
             <input type="text" name="pesquisar" class="form-control" id="exampleInputName2" placeholder="Digite sua pesquisa...">
           </div>
-		      <button type="submit" class="btn btn-primary">Pesquisar</button>
+		      <button type="submit" class="btn btn-danger">Pesquisar</button>
 			  </form>
 			</div>
            <hr>
@@ -43,7 +43,7 @@
                 <p id='cartoes' class="card-title"><b><?php echo $dados['descricao'] ?></b></p>
                   <p class="card-text"><strong><?php echo $dados['categoria'] ?></strong></p>
                   <h5><p class="cart-text">POR: R$ <?php echo $dados['preco'] ?></p></h5>
-                  <a href="carrinho.php?acao=add&codproduto=<?= $dados['codproduto']; ?>" id="botao" class="btn btn-primary" role="button" value="<?= $dados['codproduto']; ?>">Comprar</a>
+                  <a href="carrinho.php?acao=add&codproduto=<?= $dados['codproduto']; ?>" id="botao" class="btn btn-danger" role="button" value="<?= $dados['codproduto']; ?>">Comprar</a>
 
                 </div>
            </div></a>

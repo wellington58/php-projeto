@@ -12,7 +12,24 @@
     color: white;
 }
 
+.bg-light {
+  background-color: #FF5656 !important;
+}
+.navbar-light .navbar-nav .nav-link > a:hover {
+  background-color: black;
+  color:white;
+}
+.navbar navbar-expand-lg navbar-light bg-light a:hover {
+  color:white;
+  text-decoration: none;
+  background-color: blue;
+}
+a:hover{
+  color:white;
+  text-decoration: none;
+  background-color: blue;
 
+}
 #cartoes {
   max-width: 30ch;
   overflow: hidden;

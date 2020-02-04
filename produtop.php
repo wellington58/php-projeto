@@ -14,12 +14,16 @@ $dados = mysqli_fetch_array($resultado);
     <img src="fotosprodutos/<?=$dados['imagem']; ?>" style="height:0 auto;width:80%;padding:10px;" alt="imagem" id="alignleft" class="img-responsivo">
   </div>
 <div class="col-sm-6">
+<br/><br/><br/>
     <h3><?= $dados['descricao']; ?></h3>
+    <br/>
 	<b>Categoria:</b> <?=$dados['categoria'];?>
-	<br/>
+	<br/><br/>
 	<b>Preço: </b> R$  <?=$dados['preco']; ?>
-	<br/>
-  <a href="carrinho.php?acao=add&codproduto=<?php echo $dados['codproduto']?>" id="botao" class="btn btn-primary" role="button" value="<?= $dados['codproduto']; ?>">Comprar</a>
+	<br/><br/>
+  <img src="img/estrela.png">
+  <br/><br/><br/>
+  <a href="carrinho.php?acao=add&codproduto=<?php echo $dados['codproduto']?>" id="botao" class="btn btn-danger" style="backgound-color:#FF5656;" role="button" value="<?= $dados['codproduto']; ?>">Comprar</a>
   
 </div>
 </div>

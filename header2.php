@@ -45,26 +45,76 @@
   </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="index.php">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.php">HomeShop</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="comprar.php">Comprar</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Fale conosco</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>    
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categoria
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="produtocat.php">Ferramentas</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="produtocat2.php">Novidades</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="produtocat3.php">Embarcados</a>
+        </div>
+      </li>
+
     </ul>
-  </div>  
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="cliente.php">Cadastrar</a>
+        </li>
+
+        <li>
+        <a class="nav-link" href="carrinho.php">
+        </span>Carrinho</a>
+        </li>
+
+        <li> 
+        <a class="nav-link" href="login.php">Login</a>
+        </li>
+        
+	       <li>
+         <a class="nav-link" href="admin/login.php">Restrito</a></li>
+    </ul>
+
 </nav>
 
+
+
+
+
+
+
+
+
+<!--
+    <ul class="nav navbar-nav navbar-right">
+	<li class="nav-item">
+		<li><a class="nav-link" href="carrinho.php"><span  class="glyphicon glyphicon-shopping-cart"></span>Carrinho</a></li>
+		</li>
+      <li><a href="cliente.php"><span class="glyphicon glyphicon-user"></span> Cadastrar</a></li>
+      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	  <li><a href="admin/login.php"><span class="glyphicon glyphicon-lock"></span> Restrito</a></li>
+    </ul>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -107,3 +157,4 @@
     </div>
   </div>
 </nav>
+-->
