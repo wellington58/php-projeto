@@ -2,7 +2,7 @@
 session_start();
 ?>
 
-<?php  include ('header.php'); ?>
+<?php  include ('header2.php'); ?>
 <hr>
 <div class="container">
 	<br><br><br>

@@ -77,7 +77,7 @@ $sql = "insert into cliente values(null,'".$nome."','".$dtnasc."','".$cpf."','".
 	}
 ?>
 <?php
-include "include/header.php";
+include "header2.php";
 ?>
 <div class="container">
 <div class="col-md-10">

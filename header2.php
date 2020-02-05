@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <title>Tecnoinfo</title>
+  <title>HomeShop</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css">
@@ -47,7 +47,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="index.php">HomeShop</a>
+  <a class="navbar-brand" id="logo" href="index.php"> <img src="img/logop.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -56,7 +56,7 @@
     <ul class="navbar-nav mr-auto">
       
       <li class="nav-item">
-        <a class="nav-link" href="comprar.php">Comprar</a>
+        <a class="nav-link" href="comprar.php">Produtos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Fale conosco</a>
@@ -78,19 +78,20 @@
     </ul>
       <ul class="nav navbar-nav navbar-right">
 
-
-        <li class="nav-item">
-          <a class="nav-link" href="cliente.php">Cadastrar</a>
-        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle"></i>
+          Minha Conta
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="login.php"><i class="fa fa-user"></i> login</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="cliente.php"><i class="fa fa-user-plus"></i>Cadastrar</a>
+        </div>
+      </li>
 
         <li>
-        <a class="nav-link" href="carrinho.php">
+        <a class="nav-link" href="carrinho.php"><i class="fa fa-cart-arrow-down"></i>
         </span>Carrinho</a>
-        </li>
-
-        <li> 
-        <a class="nav-link" href="login.php">Login</a>
-        </li>
         
 	       <li>
          <a class="nav-link" href="admin/login.php">Restrito</a></li>
