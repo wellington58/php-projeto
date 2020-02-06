@@ -21,7 +21,7 @@
 }
 
 .bg-light {
-  background-color: #adb5bd !important;
+    background: linear-gradient(to right, #c0c0c0 0%, #000000 100%);
   color: #ffffff;
 }
 .navbar-light .navbar-nav .nav-link {
@@ -49,14 +49,17 @@ a.nav-link{
   padding: 8px;
 }
 #cartoes {
-  max-width: 30ch;
+  max-width: 20ch;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   text-align: center;
   
 }
-
+#img{width: 80%;
+height: auto;
+object-fit: fill;
+}
 .card-body {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
