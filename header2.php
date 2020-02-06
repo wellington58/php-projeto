@@ -59,7 +59,7 @@
         <a class="nav-link" href="comprar.php">Produtos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Fale conosco</a>
+        <a class="nav-link" href="fale_conosco.php">Fale conosco</a>
       </li>
 
       <li class="nav-item dropdown">

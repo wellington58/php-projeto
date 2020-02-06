@@ -171,7 +171,7 @@ include "header2.php";
 
 <input type="submit" name="cadastrar" class="btn btn-primary"value="Cadastrar"/>
 <button type="reset" class="btn btn-danger">Limpar</button>
-
+<br><br>
 </form>
 
 <script src="js/cep.js" type="text/javascript"></script>
