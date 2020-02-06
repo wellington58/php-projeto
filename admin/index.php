@@ -1,28 +1,42 @@
+<?php session_start();
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<?php include "includes/header.php" ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo_login.css">
+    <script src="https://kit.fontawesome.com/15b4b8b90e.js"></script>
+</head>
 
-		  <div class="col-md-10">
-		  	<div class="row">
-		  		<div class="col-md-12">
-		  			<div class="content-box-large">
-		  				<div class="panel-heading">
-							<div class="panel-title">Bem Vindo Ao Painel de Controle, <?php echo $_SESSION['login']; ?>!</div>
-							
-							<div class="panel-options">
-								<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-								<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-							</div>
-						</div>
-		  				<div class="panel-body">
-						<p>A área permite controlar todas as informações que são armazenadas no banco de dados</p>
-						<p>O Administrador poderá alterar e fazer modificações em seu dados e verificar o que foi repassado pelos seus clientes.</p>
-									  			
-		  				</div>
-		  			</div>
-		  		</div>		  		
-		  	</div> 	
-		  </div>
-		</div>
+<body>
+    <div class="container tamanho-largura">
+        <h2 class="text-center">GAP-SISTEMAS</h2>
+        <div class="d-flex justify-content-center">
+            <img src="img/cadeado.png" width="125px" height="125px" alt="">
+        </div>
+        <form action="logar.php" method="POST">
+            <div class="form-group">
+                <strong><label> Login do Usuário</label></strong>
+                <input class="form-control" type="text" name="usuario" placeholder="Digite o seu login"
+                    autocomplete="off" required />
+            </div>
+
+            <div class="form-group">
+                <strong><label>Senha</label></strong>
+                <input class="form-control" type="password" name="senha" placeholder="Digite sua senha"
+                    autocomplete="off" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block ">Entrar</button>        
+        </form><br>
+        <a href="../index.php" class="btn btn-info btn-lg" role="button" aria-disabled="true">Home</a>
+
     </div>
+</body>
 
-<?php include "includes/footer.php" ?>
+
+
+</html>

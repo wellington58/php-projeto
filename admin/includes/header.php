@@ -1,124 +1,79 @@
-<?php session_start(); ?>
 <?php
-   if(!isset($_SESSION['login'])) header("location: login.php");  
+require('validacao.php');
+// Item do menu ativo
+$menu = (isset($page)) ? $page : 'index';
 ?>
-
-
-
 <!DOCTYPE html>
-<html>
-  <head>
-	<meta charset="utf-8">
-    <title>Acesso Restrito</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-   
+<html lang="pt-br">
 
-    <link href="css/styles.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HomeShop</title>
+    <link rel="icon" href="img/logo.jpeg">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script defer src="js/fontawesome-all.min.js"></script>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
 
-  </head>
-  <body>
-  	<div class="header">
-	     <div class="container">
-	        <div class="row">
-	           <div class="col-md-5">
-	              <!-- Logo -->
-	              <div class="logo">
-	                 <h1><a href="index.php">TecInfo</a></h1>
-	              </div>
-	           </div>
-	           <div class="col-md-5">
-	              <div class="row">
-	                <div class="col-lg-12">
-	                </div>
-	              </div>
-	           </div>
-	           <div class="col-md-2">
-	              <div class="navbar navbar-inverse" role="banner">
-	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-	                    <ul class="nav navbar-nav">
-	                      <li class="dropdown">
-	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['login']; ?> <b class="caret"></b></a>
-							
-	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="restrito-sair.php">Sair</a></li>
-	                        </ul>
-	                      </li>
-	                    </ul>
-	                  </nav>
-	              </div>
-	           </div>
-	        </div>
-	     </div>
-	</div>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand navbar-dark bg-danger">
+        <a class="sidebar-toggle text-light mr-3">
+            <span class="navbar-toggler-icon"></span>
+        </a>
+        <div class="topo">
+            Home Shop <p>O que vocÃª precisa em 24 horas!</p>
+            </a>
+        </div>
 
-    <div class="page-content">
-    	<div class="row">
-		  <div class="col-md-2">
-		  	<div class="sidebar content-box" style="display: block;">
-                <ul class="nav">
-                    <!-- Main menu -->
-                    <li class="current"><a href="index.php"><i class="glyphicon glyphicon-home"></i> Início</a></li>
-					
-                    <li class="submenu">
-                         <a href="#">
-                            <i class="glyphicon glyphicon-user"></i>Acesso Restrito
-                            <span class="caret pull-right"></span>
-                         </a>
-                         <!-- Sub menu -->
-                         <ul>
-							<li><a href="restrito-cadastrar.php"><i class="icon-inbox"></i>Cadastrar Usuários administrativos</a></li>
-							<li><a href="restrito-lista.php"><i class="icon-inbox"></i>Lista de Usuários </a></li>
-							<li><a href="restrito-form-pesquisa-nome.php"><i class="icon-inbox"></i>Pesquisar Usuários </a></li>
-                        </ul>
-                    </li>  
-					
-					<li class="submenu">
-                         <a href="#">
-                      <i class="glyphicon glyphicon-user"></i>Cliente
-                            <span class="caret pull-right"></span>
-                         </a>
-                         <!-- Sub menu -->
-                         <ul>
-							<li><a href="form-cliente.php"><i class="icon-inbox"></i>Cadastrar Cliente </a></li>
-							<li><a href="cliente-lista.php">Clientes Cadastrados</a></li>
-							<li><a href="cliente-form-pesquisa-nome.php">Pesquisar cliente</a></li> 
-                        </ul>
-                    </li>
-						<li class="submenu">
-                         <a href="#">
-                      <i class="glyphicon glyphicon-user"></i>Produto
-                            <span class="caret pull-right"></span>
-                         </a>
-                         <!-- Sub menu -->
-                         <ul>
-							<li><a href="form-produto.php"><i class="icon-inbox"></i>Cadastrar Produto </a></li>
-							<li><a href="produto-lista.php">Produtos Cadastrados</a></li>
-							<li><a href="produto-form-pesquisa-nome.php">Pesquisar Produto</a></li> 
-                        </ul>
-                    </li>
-					
-					<li class="submenu">
-                         <a href="#">
-                      <i class="glyphicon glyphicon-user"></i>Pedido
-                            <span class="caret pull-right"></span>
-                         </a>
-                         <!-- Sub menu -->
-                         <ul>
-							
-							<li><a href="pedido-lista.php">Pedidos Cadastrados</a></li>
-							<li><a href="pedido-pesquisaporcliente.php">Pedidos por cliente</a></li>
-							<li><a href="pedido-form-pesquisa-nome.php">Pesquisar Pedido</a></li> 
-                        </ul>
-                    </li>
-					
-					
-					
-					
-					 <li class="current"><a href="cliente-sair.php"><i class="glyphicon glyphicon-log-out"></i>Sair</a></li>		
-                </ul>
-             </div>
-		  </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                        <img class="rounded-circle" src="../img/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Perfil</a>
+                        <a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Menu sidebar -->
+    <div class="d-flex">
+        <nav class="sidebar">
+            <ul class="list-unstyled">
+                <li><a href="home.php"><i class="fas fa-home"></i> HOME</a></li>
+
+                <li><a href="#submenu1" data-toggle="collapse"><i class="fas fa-user"></i> Usuário </a>
+                    <ul id="submenu1" class="list-unstyled collapse">
+                        <li <?php echo ($menu == 'novo_usuario') ? 'class="active"' : null; ?>><a href="usuario_cadastro.php"><i class="fas fa-user-plus"></i> Novo </a></li>
+                        <li <?php echo ($menu == 'listar_usuario') ? 'class="active"' : null; ?>><a href="usuario_list.php"><i class="fas fa-users"></i> Listar </a></li>
+                        <li <?php echo ($menu == 'buscar_usuario') ? 'class="active"' : null; ?>><a href="usuario_buscar.php"><i class="fas fa-search"></i> Buscar </a></li>
+                    </ul>
+                </li>
+                <li><a href="#submenu2" data-toggle="collapse"><i class="fas fa-user"></i> Cliente </a>
+                    <ul id="submenu2" class="list-unstyled collapse">
+                        <li <?php echo ($menu == 'novo_cliente') ? 'class="active"' : null; ?>><a href="cliente_cadastro.php"><i class="fas fa-user-plus"></i> Novo </a></li>
+                        <li <?php echo ($menu == 'listar_cliente') ? 'class="active"' : null; ?>><a href="cliente_list.php"><i class="fas fa-users"></i> Listar </a></li>
+                    </ul>
+                </li>
+                <li><a href="#submenu3" data-toggle="collapse"><i class="fas fa-list-ul"></i> Produto</a>
+                    <ul id="submenu3" class="list-unstyled collapse">
+                        <li <?php echo ($menu == 'novo_produto') ? 'class="active"' : null; ?>><a href="produto_cadastro.php"><i class="fas fa-tags"></i> Novo</a></li>
+                        <li <?php echo ($menu == 'listar_produto') ? 'class="active"' : null; ?>><a href="produto_list.php"><i class="fas fa-tags"></i> Listar</a></li>
+                    </ul>
+                </li>
+                <li><a href="#submenu4" data-toggle="collapse"><i class="fas fa-shopping-cart"></i> Pedido</a>
+                    <ul id="submenu4" class="list-unstyled collapse">
+                        <li <?php echo ($menu == 'pedidos') ? 'class="active"' : null; ?>><a href="pedido_lista.php"><i class="fas fa-tags"></i> Pedidos</a></li>
+                        <li <?php echo ($menu == 'pedidoC') ? 'class="active"' : null; ?>><a href="pedido_lista_cliente.php"><i class="fas fa-search"></i> Buscar por cliente</a></li>
+                        <li <?php echo ($menu == 'pedidoCodigo') ? 'class="active"' : null; ?>><a href="pedido_lista_codigo.php"><i class="fas fa-search"></i> Buscar por código</a></li>
+                    </ul>
+                </li>
+                <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </nav>

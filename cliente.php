@@ -80,39 +80,29 @@ $sql = "insert into cliente values(null,'".$nome."','".$dtnasc."','".$cpf."','".
 include "header2.php";
 ?>
 <div class="container">
-<div class="col-md-10">
-		  	<div class="row">
-		<div class="col-md-12">
-		  			<div class="content-box-large">
-		  				<div class="panel-heading">
-							<div class="panel-title">
-				  <h1>Cadastro Cliente</h1>
-			</div>
-			
-			
-			<div class="panel-options">
-								
-								<a href="cliente-lista.php">
-						<button type='button' class='btn btn-sm btn-success'>Listar</button></a>
-								<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-					</a>
-					
-					</div>
-						</div>
-		  	<div class="panel-body">
+	<div class="col-md-10">
+		<div class="row">
+			<div class="col-md-12">
+		  		<div class="content-box-large">
+		  			<div class="panel-heading">
+
   
 
       
 <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" enctype="multipart/form-data" name="cadastro" >
+
 <h1>Cadastro de Clientes</h1>
-    <div class="form-group">
-      <label for="nome">Nome:</label>
-      <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome">
-    </div>
-	<div class="form-group">
-      <label for="dtnasc">Data de Nascimento:</label>
-<input type="date" class="form-control" id="dtnasc" placeholder="Data de Nascimento" name="dtnasc">
-    </div>
+	<div class='row'>
+		<div class="form-group col-lg-6 col-12">
+     	 	<label for="nome">Nome:</label>
+      		<input type="text" class="form-control" id="nome" placeholder="Nome" name="nome">
+    	</div>
+		<div class="form-group col-lg-6 col-12">
+      		<label for="dtnasc">Data de Nascimento:</label>
+		<input type="date" class="form-control" id="dtnasc" placeholder="Data de Nascimento" name="dtnasc">
+   	 	</div>
+	</div>
+	<div class='row'>
 	<div class="form-group">
       <label for="cpf">CPF:</label>
       <input type="text" class="form-control" id="cpf" placeholder="CPF" name="cpf">
@@ -121,6 +111,10 @@ include "header2.php";
       <label for="identidade">Identidade:</label>
       <input type="text" class="form-control" id="identidade" placeholder="Identidade" name="identidade">
     </div>
+	
+	</div>
+   
+	
  	
 <div class="form-group">
       <label for="cep">CEP:</label>

@@ -94,7 +94,7 @@
         </span>Carrinho</a>
         
 	       <li>
-         <a class="nav-link" href="admin/login.php">Restrito</a></li>
+         <a class="nav-link" href="admin/index.php">Restrito</a></li>
     </ul>
 
 </nav>
